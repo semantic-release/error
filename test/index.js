@@ -26,3 +26,12 @@ test('sets message and code', function (t) {
   t.is(error.message, message)
   t.end()
 })
+
+test('terminating or non-terminating', function (t) {
+  var terminatingError = new SemanticReleaseError()
+  var nonTerminatingError = new SemanticReleaseError('ENOFOO', 'bar', false)
+
+  t.is(terminatingError.stop, true)
+  t.is(nonTerminatingError.stop, false)
+  t.end()
+})
