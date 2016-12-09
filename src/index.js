@@ -9,5 +9,5 @@ function SemanticReleaseError (message, code, stop) {
   this.name = this.constructor.name
   this.message = message
   this.code = code
-  this.stop = stop
+  this.stop = Boolean(stop)
 }
