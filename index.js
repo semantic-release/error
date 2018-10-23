@@ -11,6 +11,15 @@ class SemanticReleaseError extends Error {
   }
 }
 
+function isSemanticReleaseError(object) {
+  return (
+    object !== null &&
+    typeof object === 'object' &&
+    (object instanceof SemanticReleaseError || (object instanceof Error && object.semanticRelease === true))
+  );
+}
+
 exports.default = SemanticReleaseError;
 exports.SemanticReleaseError = SemanticReleaseError;
+exports.isSemanticReleaseError = isSemanticReleaseError;
 Object.defineProperty(exports, '__esModule', {value: true});

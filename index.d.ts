@@ -5,5 +5,7 @@ export declare class SemanticReleaseError extends Error {
   constructor(message: string, code?: string, details?: string);
 }
 
+export declare function isSemanticReleaseError(object: Error): object is SemanticReleaseError;
+
 export default SemanticReleaseError;
 

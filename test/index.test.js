@@ -1,5 +1,5 @@
 import test from 'ava';
-import SemanticReleaseError from '..';
+import {SemanticReleaseError, isSemanticReleaseError} from '..';
 import throwError from './helpers/throw-error';
 import InheritedError from './helpers/inherited-error';
 import throwInheritedError from './helpers/throw-inherited-error';
@@ -10,6 +10,17 @@ test('Instanciates error', t => {
   t.true(error instanceof Error);
   t.true(error.semanticRelease);
   t.true(error instanceof SemanticReleaseError);
+});
+
+test('Narrows error', t => {
+  t.true(isSemanticReleaseError(new SemanticReleaseError()));
+  t.false(isSemanticReleaseError(new TypeError()));
+  t.false(isSemanticReleaseError(1));
+  t.false(isSemanticReleaseError('string'));
+  t.false(isSemanticReleaseError(null));
+  t.false(isSemanticReleaseError([]));
+  t.false(isSemanticReleaseError({}));
+  t.false(isSemanticReleaseError(false));
 });
 
 test('Sets message', t => {
