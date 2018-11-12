@@ -3,7 +3,7 @@ declare class SemanticReleaseError extends Error {
     public message: string;
     public code: string;
     public details: string;
-    constructor(message: string, code: string, details: string);
+    constructor(message?: string, code?: string, details?: string);
 }
 
 export = SemanticReleaseError;
