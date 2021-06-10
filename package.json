@@ -19,7 +19,8 @@
     "xo": "0.38.2"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "homepage": "https://github.com/semantic-release/error#readme",
   "keywords": [
@@ -28,6 +29,7 @@
   ],
   "license": "MIT",
   "main": "index.js",
+  "typings": "index.d.ts",
   "nyc": {
     "include": [
       "index.js"
