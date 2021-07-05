@@ -28,6 +28,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: npm
       - uses: bahmutov/npm-install@v1
       - run: npm run test:ci
 
@@ -39,5 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+        with:
+          cache: npm
       - uses: bahmutov/npm-install@v1
       - run: npm run lint
