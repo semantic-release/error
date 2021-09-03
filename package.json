@@ -18,6 +18,9 @@
     "semantic-release": "17.4.2",
     "xo": "0.38.2"
   },
+  "engines": {
+    "node": ">=14.17"
+  },
   "files": [
     "index.js"
   ],
