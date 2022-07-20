@@ -1,4 +1,4 @@
-const SemanticReleaseError = require('../..');
+const SemanticReleaseError = require('../../index.js');
 
 module.exports = class InheritedError extends SemanticReleaseError {
   constructor(message, code) {
