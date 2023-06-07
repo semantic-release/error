@@ -1,10 +1,10 @@
-import test from 'ava';
-import throwError from './helpers/throw-error.js';
-import InheritedError from './helpers/inherited-error.js';
-import throwInheritedError from './helpers/throw-inherited-error.js';
-import SemanticReleaseError from '../index.js';
+import test from "ava";
+import throwError from "./helpers/throw-error.js";
+import InheritedError from "./helpers/inherited-error.js";
+import throwInheritedError from "./helpers/throw-inherited-error.js";
+import SemanticReleaseError from "../index.js";
 
-test('Instantiates error', (t) => {
+test("Instantiates error", (t) => {
   const error = new SemanticReleaseError();
 
   t.true(error instanceof Error);
@@ -12,8 +12,8 @@ test('Instantiates error', (t) => {
   t.true(error instanceof SemanticReleaseError);
 });
 
-test('Sets message', (t) => {
-  const message = 'foo';
+test("Sets message", (t) => {
+  const message = "foo";
   const error = new SemanticReleaseError(message);
 
   t.is(error.message, message);
@@ -21,9 +21,9 @@ test('Sets message', (t) => {
   t.true(error instanceof SemanticReleaseError);
 });
 
-test('Sets message and code', (t) => {
-  const code = 'ENOFOO';
-  const message = 'bar';
+test("Sets message and code", (t) => {
+  const code = "ENOFOO";
+  const message = "bar";
   const error = new SemanticReleaseError(message, code);
 
   t.is(error.code, code);
@@ -32,10 +32,10 @@ test('Sets message and code', (t) => {
   t.true(error instanceof SemanticReleaseError);
 });
 
-test('Sets message, code and details', (t) => {
-  const code = 'ENOFOO';
-  const message = 'bar';
-  const details = 'baz';
+test("Sets message, code and details", (t) => {
+  const code = "ENOFOO";
+  const message = "bar";
+  const details = "baz";
   const error = new SemanticReleaseError(message, code, details);
 
   t.is(error.code, code);
@@ -45,10 +45,10 @@ test('Sets message, code and details', (t) => {
   t.true(error instanceof SemanticReleaseError);
 });
 
-test('Include the stacktrace and name', async (t) => {
+test("Include the stacktrace and name", async (t) => {
   const error = await t.throws(() => throwError());
   t.regex(error.stack, /helpers\/throw-error/);
-  t.is(error.name, 'SemanticReleaseError');
+  t.is(error.name, "SemanticReleaseError");
   t.true(error.semanticRelease);
   t.true(error instanceof SemanticReleaseError);
 });
@@ -56,7 +56,7 @@ test('Include the stacktrace and name', async (t) => {
 test('Include "semanticRelease" property in inherited errors', async (t) => {
   const error = await t.throws(() => throwInheritedError());
   t.regex(error.stack, /helpers\/throw-inherited-error/);
-  t.is(error.name, 'InheritedError');
+  t.is(error.name, "InheritedError");
   t.true(error instanceof InheritedError);
   t.true(error.semanticRelease);
 });
