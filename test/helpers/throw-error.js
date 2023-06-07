@@ -1,5 +1,5 @@
-const SemanticReleaseError = require('../../index.js');
+import SemanticReleaseError from '../../index.js';
 
-module.exports = () => {
+export default () => {
   throw new SemanticReleaseError('message', 'code');
-};
+}

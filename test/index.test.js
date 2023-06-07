@@ -1,10 +1,10 @@
-const test = require('ava');
-const throwError = require('./helpers/throw-error.js');
-const InheritedError = require('./helpers/inherited-error.js');
-const throwInheritedError = require('./helpers/throw-inherited-error.js');
-const SemanticReleaseError = require('..');
+import test from 'ava';
+import throwError from './helpers/throw-error.js';
+import InheritedError from './helpers/inherited-error.js';
+import throwInheritedError from './helpers/throw-inherited-error.js';
+import SemanticReleaseError from '../index.js';
 
-test('Instanciates error', (t) => {
+test('Instantiates error', (t) => {
   const error = new SemanticReleaseError();
 
   t.true(error instanceof Error);

@@ -11,7 +11,7 @@ Any other type of error will be considered by [semantic-release](https://github.
 ## Usage
 
 ```js
-const SemanticReleaseError = require("@semantic-release/error");
+import SemanticReleaseError from "@semantic-release/error";
 
 // Default
 throw new SemanticReleaseError();

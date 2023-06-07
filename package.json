@@ -2,6 +2,7 @@
   "name": "@semantic-release/error",
   "description": "errors with more than just a message",
   "version": "0.0.0-development",
+  "type": "module",
   "author": "Stephan Bönnemann <stephan@boennemann.me> (http://boennemann.me)",
   "ava": {
     "files": [
@@ -29,7 +30,7 @@
     "semantic-release"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "exports": "./index.js",
   "nyc": {
     "include": [
       "index.js"
