@@ -15,7 +15,7 @@
   "devDependencies": {
     "ava": "8.0.2",
     "c8": "12.0.0",
-    "prettier": "3.9.9"
+    "prettier": "3.9.10"
   },
   "engines": {
     "node": ">=18"
